@@ -1,0 +1,15 @@
+.headerArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+.contentDiv{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
