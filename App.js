@@ -37,11 +37,21 @@ class App extends React.Component{
     }
 
     hideText(){
-        if(this.state.contents.isSelected){
-            document.body.style.display="hidden";
-            this.state.contents.isSelected = !this.state.contents.isSelected;
-        }
-        document.body.style.display= "block";
+        this.setState(prevState => {
+            const newState = prevState.contents.map(item => {
+                item.isSelected = !item.isSelected;
+                if(item.isSelected === true){
+                    document.body.style.display="hidden";
+                }
+                else{
+                    document.body.style.display="block";
+                }
+                return item;
+            })
+            return {
+                contents: newState
+            } 
+        })
     }
 
     render(){
